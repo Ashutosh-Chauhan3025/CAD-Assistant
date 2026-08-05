@@ -1,0 +1,30 @@
+{
+  "evaluation_timestamp": "2026-08-05T10:52:23.610005",
+  "dataset": "sgp-bench",
+  "split": "cad",
+  "subject": "2D",
+  "metrics": {
+    "total_samples": 1,
+    "correct_predictions": 0,
+    "error_count": 1,
+    "predictions_made": 0,
+    "accuracy": 0.0,
+    "prediction_accuracy": 0.0,
+    "avg_execution_time": 16.59002184867859,
+    "answer_distribution": {},
+    "completion_rate": 0.0,
+    "voting_stats": {}
+  },
+  "results": [
+    {
+      "pid": 0,
+      "predicted_answer": null,
+      "correct_answer": "B",
+      "is_correct": false,
+      "reasoning": null,
+      "execution_time": 16.59002184867859,
+      "error": "Error evaluating sample 0: vLLM request failed: Connection error.",
+      "assistant_logs": null
+    }
+  ]
+}
