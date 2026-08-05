@@ -18,7 +18,8 @@ import traceback
 
 from sgp_bench_loader import SGPBenchLoader, SGPSample
 from cad_assistant.core import CADAssistantCore
-from cad_assistant.openai_planner import OpenAIPlannerChain
+# from cad_assistant.openai_planner import OpenAIPlannerChain
+from cad_assistant.vllm_planner import build_planner
 
 
 @dataclass
@@ -57,7 +58,8 @@ def evaluate_single_sample_isolated(sample_config_sketches_tuple):
         # Import here to ensure fresh imports in each process
         import json
         from cad_assistant.core import CADAssistantCore
-        from cad_assistant.openai_planner import OpenAIPlannerChain
+        # from cad_assistant.openai_planner import OpenAIPlannerChain
+        from cad_assistant.vllm_planner import build_planner
         
         # Load config to get max_steps
         with open(config_path, 'r') as f:
@@ -73,7 +75,8 @@ def evaluate_single_sample_isolated(sample_config_sketches_tuple):
             raise FileNotFoundError(f"Sketch file not found: {sketch_file}")
         
         # Create fresh assistant instance for this process
-        planner = OpenAIPlannerChain(config_path=config_path)
+        # planner = OpenAIPlannerChain(config_path=config_path)
+        planner = build_planner(config_path=config_path)
         assistant = CADAssistantCore(
             planner_chain=planner,
             prompt_name="sgp_cad_evaluation",
@@ -199,7 +202,8 @@ class SGPCADEvaluator:
     def _create_cad_assistant(self, project_file: str) -> CADAssistantCore:
         """Create a new CAD Assistant instance."""
         try:
-            planner = OpenAIPlannerChain(config_path=self.config_path)
+            # planner = OpenAIPlannerChain(config_path=self.config_path)
+            planner = build_planner(config_path=self.config_path)
             assistant = CADAssistantCore(
                 planner_chain=planner,
                 prompt_name="sgp_cad_evaluation",

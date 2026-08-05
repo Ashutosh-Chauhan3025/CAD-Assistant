@@ -1,6 +1,16 @@
 {
   "openai_api_key": "your-key-here",
   "openai_model": "gpt-4o-2024-08-06",
+
+  "planner_backend": "vllm",
+  "vllm_base_url": "https://reef-regulated-hoped-discussing.trycloudflare.com/v1",
+  "vllm_api_key": "sgpbench-CHANGEME",
+  "qwen_model_id": "Qwen/Qwen3-VL-8B-Instruct",
+  "qwen_max_new_tokens": 1536,
+  "qwen_sampling": false,
+  "qwen_max_history_turns": 16,
+  "qwen_max_history_images": 1,
+  "request_timeout": 600,
   "max_steps": 10,
   "debug_mode": false,
   "freecad_documentation": {
