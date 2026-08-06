@@ -3,7 +3,7 @@
   "openai_model": "gpt-4o-2024-08-06",
 
   "planner_backend": "vllm",
-  "vllm_base_url": "https://optimize-utc-unix-reduced.trycloudflare.com/v1",
+  "vllm_base_url": "https://wiring-observation-table-hazards.trycloudflare.com/v1",
   "vllm_api_key": "sgpbench-CHANGEME",
   "qwen_model_id": "Qwen/Qwen3-VL-8B-Instruct",
   "qwen_max_new_tokens": 1536,
